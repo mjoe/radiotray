@@ -4,8 +4,8 @@ package tray
 import (
 	"log"
 
-	"github.com/angelodlfrtr/radiotray/cmd/config"
 	"github.com/getlantern/systray"
+	"github.com/mjoe/radiotray/cmd/config"
 )
 
 // RadioSelectCH chan to select radio
@@ -17,11 +17,15 @@ var StopCH chan bool
 // SettingsCH to open settings interface
 var SettingsCH chan bool
 
+// InfoCH to open info interface
+var InfoCH chan bool
+
 // Init tray menu
 func Init(cfg *config.Config, cbFunc func()) {
 	RadioSelectCH = make(chan *config.Radio)
 	StopCH = make(chan bool)
 	SettingsCH = make(chan bool)
+	InfoCH = make(chan bool)
 
 	systray.Run(onReady(cfg, cbFunc), onExit)
 }

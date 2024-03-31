@@ -3,10 +3,13 @@ package config
 
 import (
 	"fmt"
-	"io/ioutil"
 	"os"
 
 	"gopkg.in/yaml.v2"
+)
+
+var (
+	Version string
 )
 
 // Config contains radios available
@@ -28,7 +31,7 @@ func New() *Config {
 // Load yaml config from fs
 func (cfg *Config) Load() error {
 	if fileExists(FilePath()) {
-		yamlBytes, err := ioutil.ReadFile(FilePath())
+		yamlBytes, err := os.ReadFile(FilePath())
 		if err != nil {
 			return err
 		}
@@ -49,20 +52,26 @@ func (cfg *Config) Write() error {
 		return err
 	}
 
-	return ioutil.WriteFile(FilePath(), yamlBytes, 0644)
+	return os.WriteFile(FilePath(), yamlBytes, 0644)
 }
 
 // SetDefaults on config
 func (cfg *Config) SetDefaults() {
 	cfg.Radios = append(cfg.Radios, &Radio{
-		Name:   "TSF Jazz",
-		Source: "https://tsfjazz.ice.infomaniak.ch/tsfjazz-high.mp3",
+		Name:   "Maxxima",
+		Source: "https://maxxima.mine.nu/maxxima.mp3",
 		Format: "mp3",
 	})
 
 	cfg.Radios = append(cfg.Radios, &Radio{
-		Name:   "France Inter",
-		Source: "https://icecast.radiofrance.fr/franceinter-midfi.mp3",
+		Name:   "Swiss Pop",
+		Source: "http://stream.srg-ssr.ch/m/rsp/mp3_128",
+		Format: "mp3",
+	})
+
+	cfg.Radios = append(cfg.Radios, &Radio{
+		Name:   "Swiss Jazz",
+		Source: "http://stream.srg-ssr.ch/m/rsj/mp3_128",
 		Format: "mp3",
 	})
 }

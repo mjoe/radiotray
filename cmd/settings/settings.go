@@ -5,7 +5,7 @@ import (
 	"os/exec"
 	"runtime"
 
-	"github.com/angelodlfrtr/radiotray/cmd/config"
+	"github.com/mjoe/radiotray/cmd/config"
 )
 
 // Init settings

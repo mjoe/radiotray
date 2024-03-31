@@ -5,9 +5,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/angelodlfrtr/radiotray/cmd/config"
 	"github.com/getlantern/systray"
 	"github.com/kardianos/osext"
+	"github.com/mjoe/radiotray/cmd/config"
+
 	autostart "github.com/protonmail/go-autostart"
 )
 
@@ -15,7 +16,7 @@ var stopItem *systray.MenuItem
 
 // Build tray menu
 func Build(cfg *config.Config) {
-	SetTooltip("Play radios your loving")
+	SetTooltip("Play your favorite radio streams")
 	SetDefaultIcon()
 
 	// Stop control
@@ -108,6 +109,21 @@ func Build(cfg *config.Config) {
 		for range settingsMenuEntry.ClickedCh {
 			select {
 			case SettingsCH <- true:
+			default:
+			}
+		}
+	}()
+
+	// Info
+	infoMenuEntry := systray.AddMenuItem(
+		"Info",
+		"See info",
+	)
+
+	go func() {
+		for range infoMenuEntry.ClickedCh {
+			select {
+			case InfoCH <- true:
 			default:
 			}
 		}

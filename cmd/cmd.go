@@ -4,10 +4,11 @@ package cmd
 import (
 	"log"
 
-	"github.com/angelodlfrtr/radiotray/cmd/config"
-	"github.com/angelodlfrtr/radiotray/cmd/player"
-	"github.com/angelodlfrtr/radiotray/cmd/settings"
-	"github.com/angelodlfrtr/radiotray/cmd/tray"
+	"github.com/mjoe/radiotray/cmd/config"
+	"github.com/mjoe/radiotray/cmd/player"
+	"github.com/mjoe/radiotray/cmd/settings"
+	"github.com/mjoe/radiotray/cmd/tray"
+	"github.com/sqweek/dialog"
 )
 
 // Main func call
@@ -40,6 +41,8 @@ func Main() {
 				tray.DisableStopItem()
 			case <-tray.SettingsCH:
 				settings.Open()
+			case <-tray.InfoCH:
+				dialog.Message("RadioTray Version %s", config.Version).Title("RadioTray").Info()
 			}
 		}
 	})

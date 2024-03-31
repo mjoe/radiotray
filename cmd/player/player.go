@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/angelodlfrtr/radiotray/cmd/config"
-	"github.com/faiface/beep"
-	"github.com/faiface/beep/mp3"
-	"github.com/faiface/beep/speaker"
+	"github.com/gopxl/beep"
+	"github.com/gopxl/beep/mp3"
+	"github.com/gopxl/beep/speaker"
+	"github.com/mjoe/radiotray/cmd/config"
 )
 
 var _currentStreamer *beep.StreamSeekCloser

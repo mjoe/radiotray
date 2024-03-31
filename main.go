@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/angelodlfrtr/radiotray/cmd"
+	"github.com/mjoe/radiotray/cmd"
 )
 
 func main() {

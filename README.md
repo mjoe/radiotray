@@ -2,11 +2,16 @@
 
 ![Logo](./lib/icons/radio.red.128.png)
 
-Radio in your tray bar for MacOS and Linux
+Simple radio player in your tray bar for macOS
 
 ## Installation
 
-See release page.
+```bash
+# clone repo
+brew install go
+make darwin-app
+# move build/RadioTray.app to /Applications
+```
 
 ## Configuration
 
@@ -14,32 +19,21 @@ Radios configurations are stored in `$HOME/.radiotray.yaml`.
 
 After each change, restart the app.
 
-Exemple configuration :
+Example configuration :
 
 ```yaml
 radios:
-- name: TSF Jazz
+- name: Maxxima
   format: mp3
-  source: https://tsfjazz.ice.infomaniak.ch/tsfjazz-high.mp3
-- name: France Inter
+  source: https://maxxima.mine.nu/maxxima.mp3
+- name: Swiss Pop
   format: mp3
-  source: https://icecast.radiofrance.fr/franceinter-midfi.mp3
-- name: France Info
+  source: http://stream.srg-ssr.ch/m/rsp/mp3_128
+- name: Swiss Jazz
   format: mp3
-  source: https://icecast.radiofrance.fr/franceinfo-midfi.mp3
-- name: Radio Nova
-  format: mp3
-  source: https://novazz.ice.infomaniak.ch/novazz-128.mp3
-- name: Radio Classique
-  format: mp3
-  source: https://radioclassique.ice.infomaniak.ch/radioclassique-high.mp3
-- name: FIP
-  format: mp3
-  source: https://icecast.radiofrance.fr/fip-midfi.mp3
-- name: RFI
-  format: mp3
-  source: http://live02.rfi.fr/rfimonde-96k.mp3
-- name: RFI Musique
-  format: mp3
-  source: http://live02.rfi.fr/rfimusiquemonde-96k.mp3
+  source: http://stream.srg-ssr.ch/m/rsj/mp3_128
 ```
+
+## Credits
+
+- https://github.com/angelodlfrtr/radiotray
