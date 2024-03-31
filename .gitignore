@@ -1,8 +1,10 @@
-
-# Created by https://www.toptal.com/developers/gitignore/api/macos,go,vim
-# Edit at https://www.toptal.com/developers/gitignore?templates=macos,go,vim
+# Created by https://www.toptal.com/developers/gitignore/api/go,visualstudiocode,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=go,visualstudiocode,macos
 
 ### Go ###
+# If you prefer the allow list template instead of the deny list, see community template:
+# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
+#
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -19,9 +21,8 @@
 # Dependency directories (remove the comment below to include it)
 # vendor/
 
-### Go Patch ###
-/vendor/
-/Godeps/
+# Go workspace file
+go.work
 
 ### macOS ###
 # General
@@ -30,7 +31,8 @@
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -51,27 +53,24 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### Vim ###
-# Swap
-[._]*.s[a-v][a-z]
-!*.svg  # comment out if you don't need vector files
-[._]*.sw[a-p]
-[._]s[a-rt-v][a-z]
-[._]ss[a-gi-z]
-[._]sw[a-p]
+### macOS Patch ###
+# iCloud generated files
+*.icloud
 
-# Session
-Session.vim
-Sessionx.vim
+### VisualStudioCode ###
+.vscode/*
 
-# Temporary
-.netrwhist
-*~
-# Auto-generated tag files
-tags
-# Persistent undo
-[._]*.un~
+# Local History for Visual Studio Code
+.history/
 
-# End of https://www.toptal.com/developers/gitignore/api/macos,go,vim
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/go,visualstudiocode,macos
 
 /build
