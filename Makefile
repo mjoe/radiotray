@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	go build -o ./build/radiotray -ldflags "-X github.com/mjoe/radiotray/cmd/config.Version=1.0"
+	go build -o ./build/radiotray -ldflags "-X github.com/mjoe/radiotray/cmd/config.Version=1.1"
 
 .PHONY: clean
 clean:
